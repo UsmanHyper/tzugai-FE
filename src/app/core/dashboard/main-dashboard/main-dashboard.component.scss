@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  // flex-wrap: wrap;
+  // align-content: flex-start;
+  // align-items: flex-start;
+}
+
+app-sidebar {
+  max-width: 295px;
+  width: 100%;
+}
+
+.sidebar {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.nav-and-body {
+  width: calc(100% - 295px);
+  height: 100%;
+}
+
+.menu {
+  display: block;
+}
+
+@media only screen and (max-width: 1200px) {
+  .menu {
+    display: none;
+  }
+
+  .side-bar {
+    width: 0% !important;
+  }
+
+  .nav-and-body {
+    width: 100% !important;
+  }
+}

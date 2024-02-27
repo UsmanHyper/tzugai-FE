@@ -1,0 +1,157 @@
+.formBox {
+  height: 100vh;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+
+  .label-title {
+    font-size: 24px;
+  }
+
+  .title-discription {
+    font-size: 12px;
+  }
+
+  .label-feild {
+    font-size: 12px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .custom-checkbox {
+    font-size: 12px;
+  }
+
+  .forgot-link {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .login-box {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .login-box {
+    max-width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .login-box {
+    max-width: 30%;
+  }
+}
+
+.btn-disabled {
+  background-color: rgb(153, 153, 153, 0.55) !important;
+  cursor: not-allowed;
+}
+
+.btn-enabled {
+  background-color: rgb(51, 51, 51) !important;
+  cursor: pointer;
+}
+
+
+.login-box {
+  display: flex;
+  margin: 0 auto;
+  max-width: calc(100% - 20%) !important;
+  justify-content: space-around;
+  flex-direction: column;
+  font-family: "Poppins";
+  font-style: normal;
+  padding: 56px 0px;
+
+  .label-title {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+    color: #000000;
+  }
+
+  .title-discription {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 125%;
+    display: flex;
+    align-items: flex-end;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .label-feild {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 125%;
+    color: #000000;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 18px 0px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+    
+  }
+
+  .custom-checkbox {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 125%;
+    color: #000000;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .forgot-link {
+    float: right;
+    margin-top: 3px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 125%;
+    text-decoration-line: underline;
+    cursor: pointer;
+    color: #426bf7;
+  }
+}
+
+
+.main-cont {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.btn-disabled{
+  background-color: rgb(153 153 153 / 55%) !important;
+  cursor: not-allowed;
+}
+.btn-enabled{
+  background-color: rgb(51 51 51) !important;
+  cursor: pointer;
+}
+

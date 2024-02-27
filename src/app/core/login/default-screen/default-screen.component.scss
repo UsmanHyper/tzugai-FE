@@ -1,0 +1,47 @@
+:host {
+  background-size: cover;
+  height: 100vh !important;
+}
+
+.bg-theme {
+  // background-image: url(../../../../assets/images/corebackground.svg);
+  background-color: #1f2028;
+  box-shadow: 0 -395px 254px 20px #00000057!important;
+  // background-size: cover;
+}
+
+.main-cardd {
+  background: #ffffff;
+  box-shadow: 25px 25px 93px -47px rgba(6, 30, 152, 0.45);
+  border-radius: 8px;
+  // min-height: 70% !important;
+  // width: 65% !important;
+  // margin: auto;
+}
+
+.side-card {
+  background: linear-gradient(328.55deg, #6563e3 30.85%, #09a5fc 87.44%);
+  border-radius: 8px;
+  height: 100%;
+  min-height: 400px;
+  padding: 40px;
+  // width: calc(100% - 65%);
+  // margin: 0 20px 0 0;
+}
+
+
+.main-sec{
+  height: calc( 100vh - 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-color: rgba(0, 0, 0, 0.555);
+}
+
+
+@media only screen and (max-height: 600px) {
+  .main-sec{
+    height: 100% !important;
+    margin-bottom: 32px !important;
+  }
+}

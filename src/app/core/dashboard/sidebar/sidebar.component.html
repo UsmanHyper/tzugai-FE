@@ -1,0 +1,62 @@
+<div class="side-bar ">
+    <div class="logo header-block">
+        <img src="../../../../assets/images/tzugai.svg" />
+    </div>
+    <div class="side-nav-content mt-50">
+
+        <ng-container *ngFor="let item of menus ; let idx=index; ">
+            <ul class="tree nav-list" style="  color: #242220; ">
+                <li class="nav-list-item w-100-p">
+                    <ng-container *ngIf="!item.is_parent">
+                        <details class="w-96-p">
+                            <summary class="sum-title" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact : true}"
+                                [routerLink]="[item.route? item.route: item.sub_menu['route']]"
+                                (click)="onSelectedItem(menus, idx)">
+                                <div class="menu-list">
+                                    <div class="label-icon">
+                                        <mat-icon style="margin-left: 20px;" class="mr-10">{{item.icon}} </mat-icon>
+                                        {{item.name}}
+                                    </div>
+                                </div>
+                            </summary>
+                            <ul>
+                                <li *ngFor="let child of item.sub_menu" style="margin-left: 10px !important">
+                                    <span>
+                                        <a routerLinkActive="active2" [routerLinkActiveOptions]="{exact : true}"
+                                            [routerLink]="[child.route]">{{child.name}} </a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </details>
+                    </ng-container>
+                    <ng-container *ngIf="item.is_parent">
+                        <details class="w-96-p">
+                            <summary class="sum-title" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact : true}"
+                                [routerLink]="[item.route? item.route: item.sub_menu['route']]"
+                                (click)="onSelectedItem(menus, idx)">
+                                <div class="menu-list">
+                                    <div class="label-icon">
+                                        <mat-icon style="margin-left: 20px;" class="mr-10">{{item.icon}} </mat-icon>
+                                        {{item.name}}
+                                    </div>
+                                    <mat-icon *ngIf="!item.expanded" class="mr-10">chevron_right</mat-icon>
+                                    <mat-icon *ngIf="item.expanded" class="mr-10">expand_more</mat-icon>
+                                </div>
+                            </summary>
+                            <ul>
+                                <li *ngFor="let child of item.sub_menu" style="margin-left: 10px !important">
+                                    <span>
+                                        <a routerLinkActive="active2" [routerLinkActiveOptions]="{exact : true}"
+                                            [routerLink]="[child.route]">{{child.name}} </a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </details>
+                    </ng-container>
+                </li>
+            </ul>
+        </ng-container>
+    </div>
+</div>

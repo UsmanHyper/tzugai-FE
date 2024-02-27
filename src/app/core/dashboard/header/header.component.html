@@ -1,0 +1,129 @@
+<div class="header  ">
+    <div class="nav ">
+        <div class="header-block">
+            <div class="userprofile">
+
+                <div class="menu">
+
+                    <button mat-raised-button class="btn-icon " style="margin-left: 8px;" (click)="toggleSidebar()">
+                        <mat-icon style="color:#9DACB4;  cursor: pointer; display: flex">menu</mat-icon>
+                        <!-- (click)="snav.toggle()">menu</mat-icon> -->
+                    </button>
+
+                    <!-- app.component.html -->
+                    <!-- <mat-drawer-container class="example-container">
+                        <mat-drawer #drawer mode="side" [opened]="isSidebarOpen">
+                            <a href="#">About</a>
+                            <a href="#">Services</a>
+                            <a href="#">Clients</a>
+                            <a href="#">Contact</a>
+                        </mat-drawer>
+
+                        <mat-drawer-content>
+                            <app-header (toggleSidenav)="toggleSidebar()"></app-header>
+                            <div>Main Content</div>
+                        </mat-drawer-content>
+                    </mat-drawer-container> -->
+
+
+                    <!-- <ng-container id="mySidebar">
+                        <div  class="sidebar">
+                            <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
+                            <a href="#">About</a>
+                            <a href="#">Services</a>
+                            <a href="#">Clients</a>
+                            <a href="#">Contact</a>
+                        </div>
+                    </ng-container> -->
+
+
+                    <!-- <div id="main">
+                        <button class="openbtn" (click)="openNav()">☰ Open Sidebar</button>
+                    </div> -->
+                    <!-- <mat-sidenav-container class="example-sidenav-container"
+                        [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+                        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                            [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+
+                            <app-sidebar></app-sidebar>
+
+                        </mat-sidenav>
+
+                    </mat-sidenav-container> -->
+
+                </div>
+
+
+
+                <div class="sec-menu">
+
+
+                    <button mat-raised-button class="btn-icon display-none">
+                        <mat-icon style="color:#9DACB4;  cursor: pointer; display: flex">settings</mat-icon>
+                    </button>
+                    <button mat-raised-button matBadge="{{alert_count}}" [matBadgeHidden]="hidden" matBadgeColor="warn"
+                        [matMenuTriggerFor]="notification" class="btn-icon display-none"
+                        (click)="toggleBadgeVisibility()">
+                        <mat-icon style="color:#9DACB4 ;  cursor: pointer; display: flex">notifications</mat-icon>
+                    </button>
+
+                    <mat-menu #notification="matMenu" xPosition="before">
+                        <div class="title-notification">
+                            <label class="notification">Notification</label>
+
+                        </div>
+                        <div *ngIf="notifications_list.length === 0">
+
+                            <ul class=" nav-list">
+                                <li style="border:none">
+                                    <p class="list-item">No Notifications Available </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- <div *ngIf="notifications_list.length>0"  class="notification_card">
+                        <div *ngFor="let item of notifications_list">
+                            <ul class=" nav-list">
+                                <li class="list-data"
+                                    [ngClass]="{'unread': item.status === 'UNREAD' , 'read': item.status === 'READ'}"
+                                    (click)="markRead(item.id)">
+                                    <p class="list-item">{{item.title}} <br/>
+                                        {{item.description}}
+                                    </p>
+                                    <span class="list-detail">{{item.date}} at {{item.time}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                    </mat-menu>
+
+                    <div class="user-menu" [matMenuTriggerFor]="userMenu">
+                        <div class="logo-img">
+
+                            <img #img [src]="userImg? userImg : 'assets/images/avatar.png'" width="25px" height="25px"
+                                style=" border-radius: 100%;">
+
+                        </div>
+                        <div class="name">
+                            <h1 class="title">{{userName}}</h1>
+
+                        </div>
+                        <div class="notification">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                style="   transform: rotate(90deg); margin-right: 10px;"
+                                fontIcon="chevron_right"></mat-icon>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<mat-menu #userMenu="matMenu" xPosition="after">
+    <button mat-menu-item><mat-icon style="margin-left: 20px;">manage_accounts</mat-icon>
+        <!-- <button mat-menu-item (click)="userProfile()"><mat-icon style="margin-left: 20px;">manage_accounts</mat-icon> -->
+        <span style="margin: 0 20px;">User Profile</span> </button>
+    <button mat-menu-item (click)="logout()"><mat-icon style="margin-left: 20px;">logout</mat-icon>
+        <span style="margin: 0 20px;;">Logout</span></button>
+</mat-menu>

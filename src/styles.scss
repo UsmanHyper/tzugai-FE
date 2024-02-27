@@ -1,1 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/helpers";
+@import "assets/styles/customUi";
+
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  ::-webkit-scrollbar:vertical {
+    width: 8px;
+    border-radius: 15px;
+    margin-left: -10px;
+  }
+  
+  ::-webkit-scrollbar:horizontal {
+    height: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    margin-left: -10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 15px;
+    border-radius: 15px;
+    margin-left: -10px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    /* padding: 1em 0 1em 0; */
+    padding: 20px 0 12px 0;
+    border-top: 0 !important;
+  }
+  input.mat-input-element {
+    margin-top: 0 !important;
+  }
+  .mat-dialog-container {
+    padding: 0px 0 !important;
+    overflow: hidden !important;
+  }
+  
+  .mat-slide-toggle-bar {
+    height: 27px !important;
+    width: 46px !important;
+    border-radius: 36px !important;
+    background-color: #efefef;
+  }
+  .mat-slide-toggle-thumb {
+    top: 6px !important;
+    right: -6px !important;
+    position: relative;
+  }
+  .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: #68f576;
+    box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+  }
+  
+  .mat-slide-toggle .mat-slide-toggle-ripple {
+    top: -4px !important;
+    left: -3px !important;
+  }
+  
+  .mat-form-field-appearance-outline {
+    .mat-form-field-prefix {
+      top: 5px !important;
+    }
+    .mat-form-field-suffix {
+      top: 5px !important;
+    }
+  }

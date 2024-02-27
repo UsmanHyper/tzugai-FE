@@ -1,0 +1,48 @@
+<ng-progress #progressBar></ng-progress>
+<div class="main-cont">
+
+
+    <div class="login-box">
+        <label class="label-title"> Log In </label>
+        <p class="title-discription"> Please enter you credentials to log in.</p>
+        <form [formGroup]="loginForm">
+            <label class="label-feild">Email</label>
+            <mat-form-field class="w-100-p" appearance="outline">
+                <input matInput type="email" placeholder="Your email" maxlength="50" formControlName="email" required>
+                <mat-error>
+                    <div *ngIf="loginForm.get('email')!.hasError('required');">
+                        Please enter email.
+                    </div>
+                    <div *ngIf="loginForm.get('email')!.hasError('pattern');">
+                        Please enter a valid email.
+                    </div>
+                </mat-error>
+            </mat-form-field>
+
+            <label class="label-feild">Password</label>
+            <mat-form-field class="w-100-p" appearance="outline">
+                <input matInput [type]="hidePassword ? 'password' : 'text'" maxlength="25"
+                    placeholder="Enter your password" formControlName="password" required>
+                <span mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                    style="color:rgba(0, 0, 0, 0.8);">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </span>
+                <mat-error *ngIf="loginForm.get('password')!.hasError('required')">
+                    Please enter your password
+                </mat-error>
+               
+            </mat-form-field>
+
+            <div class="mt-10">
+                <div class="mb-20">
+                    <label class="custom-checkbox">
+                        <mat-checkbox formControlName="remember">Remember me</mat-checkbox>
+                    </label>
+                </div>
+                <button mat-raised-button class="submit-btn"
+                    [ngClass]="{'btn-disabled': !loginForm.valid, 'btn-enabled': loginForm.valid}"
+                    (click)="submitSignIn()" [disabled]="!loginForm.valid || loading">Log In</button>
+            </div>
+        </form>
+    </div>
+</div>
