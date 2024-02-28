@@ -1,1 +1,16 @@
-<p>dashboad works!</p>
+<div class=" w-100-p m-16">
+    <div class="row">
+        <div class="col-12">
+            <div class="upper-section" >
+                <label class="labeltitle mb-12"> Subscribers List </label>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-12"> -->
+    <div class="w-100-p h-100-p main">
+        <general-table style="height: 100%;" [config]="config" [dataSource]="users" [count]="count" [nextPage]="npPage"
+            (signals)="onTableSignals($event)"></general-table>
+    </div>
+    <!-- </div>
+    </div> -->

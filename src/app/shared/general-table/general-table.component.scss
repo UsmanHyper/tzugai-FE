@@ -1,0 +1,168 @@
+.info {
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.info:hover {
+  text-decoration: underline;
+}
+
+.loader {
+  position: absolute;
+  top: 32%;
+  left: 42%;
+  z-index: 1;
+}
+
+.table {
+  margin-bottom: 0;
+
+  thead {
+    background: #ffffff;
+    align-items: center;
+
+    >tr>th {
+      padding: 10px !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      line-height: 30px;
+      color: #b1b1b1;
+      position: relative;
+      cursor: pointer;
+
+    }
+  }
+
+  tbody {
+    >tr>td {
+      padding: 16px 10px;
+      background: #f8f8f8;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      // text-transform: lowercase;
+      font-size: 14px;
+      color: #404d61 !important;
+
+      >a {
+        text-decoration: none !important;
+        height: 28px !important;
+        line-height: 16px !important;
+      }
+
+      >a :hover {
+        color: #000;
+      }
+
+      .make-oval {
+        background: #f3f7f9;
+        border-radius: 20px;
+        padding: 2px 8px;
+        margin-right: 2px;
+        margin-bottom: 4px;
+      }
+
+      .make-oval:hover {
+        background: #e7ecee;
+      }
+    }
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+  }
+
+  .desc,
+  .asc {
+    position: absolute;
+    right: 0;
+    // top: -12px;
+    padding-right: 30px;
+  }
+
+  .desc::before {
+    content: url(../../../assets/images/Polygon1.svg);
+    opacity: 1;
+    position: absolute;
+    right: 5px;
+    // top: 0px;
+  }
+
+  // .asc::before {
+  //   content: url(../../../assets/images/Polygon1.svg);
+  //   opacity: 0.5;
+  //   position: absolute;
+  //   right: 2px;
+  //   // top: 0px;
+  // }
+
+  // .desc::after {
+  //   content: url(../../../assets/images/Polygon1.svg);
+  //   opacity: 1;
+  //   transform: rotate(180deg);
+  //   position: absolute;
+  //   right: 2px;
+  //   // top: 0px;
+  // }
+
+  .asc::after {
+    content: url(../../../assets/images/Polygon1.svg);
+    opacity: 1;
+    transform: rotate(180deg);
+    position: absolute;
+    right: 5px;
+    // top: 0px;
+  }
+
+  .btn-info {
+    background-color: #77d6e100 !important;
+    border-color: #00000057;
+    color: #454a52;
+    font-size: 20px !important;
+    margin-right: 8px;
+  }
+
+  .btn-info :hover {
+    color: #000 !important;
+  }
+
+  .btn-danger {
+    background-color: #77d6e100 !important;
+    border-color: #00000057;
+    font-size: 20px !important;
+    color: #454a52;
+  }
+
+  .btn-danger :hover {
+    color: #000 !important;
+  }
+}
+
+.custom {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.even-row {
+  background-color: rgba(243, 247, 249, 0) !important;
+}
+
+.pdf {
+  font-size: 20px !important;
+  color: #ff0000;
+  cursor: pointer;
+}
+
+.ri-delete-bin-2-line {
+  color: red
+}
+.ri-pencil-line {
+  color: forestgreen
+}
+
+
+.card {
+  margin-right: 20px !important;
+}

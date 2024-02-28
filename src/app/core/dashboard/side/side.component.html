@@ -1,0 +1,105 @@
+<mat-drawer-container class="app-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+  <mat-drawer #drawer [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="!mobileQuery.matches">
+    <!-- Your sidebar content goes here -->
+    <div class="side-bar ">
+      <div class="logo header-block">
+        <img src="../../../../assets/images/tzugai.svg" />
+      </div>
+      <div class="side-nav-content mt-50">
+
+        <ng-container *ngFor="let item of menus ; let idx=index; ">
+          <ul class="tree nav-list" style="  color: #242220; ">
+            <li class="nav-list-item w-100-p">
+              <ng-container *ngIf="!item.is_parent">
+                <details class="w-96-p">
+                  <summary class="sum-title" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"
+                    [routerLink]="[item.route? item.route: item.sub_menu['route']]"
+                    (click)="onSelectedItem(menus, idx)">
+                    <div class="menu-list">
+                      <div class="label-icon">
+                        <mat-icon style="margin-left: 20px;" class="mr-10">{{item.icon}} </mat-icon>
+                        {{item.name}}
+                      </div>
+                    </div>
+                  </summary>
+                  <ul>
+                    <li *ngFor="let child of item.sub_menu" style="margin-left: 10px !important">
+                      <span>
+                        <a routerLinkActive="active2" [routerLinkActiveOptions]="{exact : true}"
+                          [routerLink]="[child.route]">{{child.name}} </a>
+                      </span>
+                    </li>
+                  </ul>
+                </details>
+              </ng-container>
+
+            </li>
+          </ul>
+        </ng-container>
+      </div>
+    </div>
+  </mat-drawer>
+
+  <div class="app-content" style="padding: 0px !important;">
+    <div class="app-header">
+      <!-- <app-header class="h-74"></app-header>
+
+      <button mat-raised-button class="btn-icon " *ngIf="mobileQuery.matches" style="margin-left: 8px;"
+        (click)="toggleDrawer()">
+        <mat-icon style="color:#9DACB4;  cursor: pointer; display: flex">menu</mat-icon>
+      </button> -->
+      <div class="header  ">
+        <div class="nav ">
+          <div class="header-block">
+            <div class="userprofile">
+
+              <div class="menu">
+
+                <button mat-raised-button class="btn-icon " *ngIf="mobileQuery.matches" style="margin-left: 8px;"
+                  (click)="toggleDrawer()">
+                  <mat-icon style="color:#9DACB4;  cursor: pointer; display: flex">menu</mat-icon>
+                </button>
+
+
+              </div>
+              <div class="sec-menu">
+
+                <div class="user-menu" style="padding: 4px">
+                  <div class="logo-img">
+
+                    <img #img [src]="userImg? userImg : 'assets/images/avatar.png'" width="25px" height="25px"
+                      style=" border-radius: 100%;">
+
+                  </div>
+                  <div class="name">
+                    <h1 class="title">{{userName}}</h1>
+
+                  </div>
+                  <div class="notification">
+
+                    <button class="btn-icon " (click)="logout()"><mat-icon
+                        style="color:#9DACB4 ;  cursor: pointer; display: flex">logout</mat-icon></button>
+
+                  </div>
+                </div>
+                <!--  -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="nav-and-body">
+      <div style="height: calc(100% - 74px); overflow: hidden auto; flex: 1; background: #F5F5F5; margin: 20px 26px;">
+
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="app-footer">
+
+  </div>
+</mat-drawer-container>

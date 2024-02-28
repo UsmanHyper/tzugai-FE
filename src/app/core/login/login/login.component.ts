@@ -5,7 +5,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 
 import { CustomValidators } from 'src/app/core/custom.validator';
-// import { ApiService } from 'src/app/services/api.service';
+import { ApiService } from 'src/app/services/api.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
     private titlePage: Title,
     private router: Router,
     private fb: FormBuilder,
-    // private apiService: ApiService,
+    private apiService: ApiService,
 
   ) {
     this.loading = false;
@@ -58,68 +59,38 @@ export class LoginComponent implements OnInit {
 
 
   submitSignIn() {
-    console.log("this.loginForm", this.loginForm)
-    this.router.navigateByUrl('subscriber/dashboard')
-    let featuresResp: any = [
-      { id: 14, featureId: 8001, name: "Dashboard", }]
-    localStorage.setItem('features', JSON.stringify(featuresResp));
+    if (!this.loginForm.valid) {
+      return
+    }
+    else {
+      console.log("this.loginForm", this.loginForm)
+      let payload =
+      {
+        email: this.loginForm.controls['email'].value,
+        password: this.loginForm.controls['password'].value
+      }
+
+      let slug = new URL(`${environment.baseUrl}signin`)
+      this.apiService.post(slug.href, payload).subscribe(
+        (response: any) => {
+          console.log("response", response)
+          localStorage.setItem('token', response.token);
+          this.apiService.successToster("Sucess", "Login Successfully");
+          let featuresResp: any = [
+            { id: 14, featureId: 8001, name: "Dashboard", }]
+          localStorage.setItem('features', JSON.stringify(featuresResp));
+          localStorage.setItem('permission', JSON.stringify(true));
+
+          this.router.navigateByUrl('subscriber/dashboard')
+
+        }, (err: any) => {
+          console.log("response", err['error']['error'])
+          this.apiService.errorToster("Error", err['error']['error']);
+
+        }
+
+      )
+    }
+
   }
-
-
-  // submitSignIn() {
-  //   if (!this.loginForm.valid) {
-  //     return;
-  //   }
-  //   this.loading = true;
-  //   const formData = this.loginForm.value;
-  //   const url = new URL(`${environment.baseUrl}/users/authentication/login`);
-  //   const payload = {
-  //     email: formData.email.toLowerCase(),
-  //     password: formData.password,
-  //     platform: 'WEB',
-  //     usecase: 8
-  //   };
-
-  //   this.apiService.post(url.href, payload).subscribe((resp: any) => {
-  //     localStorage.setItem('token', resp.data['Token']);
-  //     this.signInFB(resp.data['fb_auth_token']);
-
-  //     if (formData.remember) {
-  //       localStorage.setItem('remember', formData.remember);
-  //       localStorage.setItem('useremail', formData.email);
-  //       localStorage.setItem('userpassword', formData.password);
-  //     }
-
-  //     // Use forkJoin to handle multiple API calls concurrently
-  //     forkJoin([
-  //       this.apiService.get(`${environment.baseUrl}/users/user-profile`),
-  //       this.apiService.get(`${environment.pickUpBaseUrlfeature}/users/features`)
-  //     ]).subscribe(([profileResp, featuresResp]) => {
-  //       const user = profileResp.data;
-  //       this.userData = user;
-  //       user['use_cases'] = 8;
-  //       const write = user['write'];
-  //       this.permission = write === 'WRITE' || write === true;
-
-  //       localStorage.setItem('permission', JSON.stringify(this.permission));
-  //       localStorage.setItem('userData', JSON.stringify(user));
-  //       localStorage.setItem('features', JSON.stringify(featuresResp));
-
-  //       this.getProfileSettings();
-
-  //       this.apiService.successToster('Login Successful', 'Success');
-  //       this.router.navigateByUrl('pickup/dashboard');
-  //     }, (err: any) => {
-  //       this.loading = false;
-  //       this.apiService.errorToster("Error", 'Access Group Not Assigned');
-  //     });
-  //   }, (err: any) => {
-  //     this.loading = false;
-  //     this.apiService.errorToster(err.error['message'], 'Unable to login');
-  //   });
-  // }
-
-  // onForgotPassword() {
-  //   this.router.navigateByUrl('forgot-password');
-  // }
 }

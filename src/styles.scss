@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
+@import url("https://fonts.googleapis.com/css?family=Manrope");
+@import url("https://fonts.googleapis.com/css?family=Inter");
+@import url("https://fonts.googleapis.com/css?family=Lalezar");
 @import "assets/styles/helpers";
-@import "assets/styles/customUi";
-
+@import 'ngx-toastr/toastr';
 
 ::-webkit-scrollbar {
     -webkit-appearance: none;

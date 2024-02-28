@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { headerSignInComponent } from './core/login/headerSignIn/headerSignIn.component';
 
 const routes: Routes = [
   // {
-  //   path: '', component: TestComponent
+  //   path: '', component: SideComponent
   // },
   {
     path: '',

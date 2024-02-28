@@ -5,7 +5,6 @@ import { Observable } from "rxjs";
 import { catchError, map } from "rxjs/operators";
 import { ApiResponse } from "../interfaces/api-response";
 import { ToastrService } from 'ngx-toastr';
-import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -79,45 +78,6 @@ export class ApiService {
       timeOut: 5000,
     });
   }
-
-
-  downloadXLS(param: any): Observable<Blob> {
-    const url = `/api/users/user_data_export_xle/?${param}`
-    const myHeaders = new HttpHeaders();
-    myHeaders.append('Access-Control-Allow-Origin', '*');
-    return this.http.get(url, { responseType: 'blob', headers: myHeaders });
-  }
-
-
-  downloadPDF(param: any): Observable<Blob> {
-    const url = `/api/users/user_data_export_pdf/?${param}`
-    const myHeaders = new HttpHeaders();
-    myHeaders.append('Access-Control-Allow-Origin', '*');
-    return this.http.get(url, { responseType: 'blob', headers: myHeaders });
-  }
-
-  downloadXLSAuditForm(param: any): Observable<Blob> {
-    const url = `/options/xle/?${param}`
-    const myHeaders = new HttpHeaders();
-    myHeaders.append('Access-Control-Allow-Origin', '*');
-    return this.http.get(url, { responseType: 'blob', headers: myHeaders });
-  }
-
-
-  downloadPDFAuditForm(param: any): Observable<Blob> {
-    const url = `/options/pdf/?${param}`
-    const myHeaders = new HttpHeaders();
-    myHeaders.append('Access-Control-Allow-Origin', '*');
-    return this.http.get(url, { responseType: 'blob', headers: myHeaders });
-  }
-  
-
-
-  deleteUserListing(id?: any, path?: any) {
-    const url = `${path}/users/user-profile?email=${id}&usecase=8`;
-    return this.http.delete(url);
-  }
-
 
 }
 

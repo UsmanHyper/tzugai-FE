@@ -1,0 +1,17 @@
+<div class="pg-container">
+    <!-- <div *ngIf="length === 0">Showing 0 to {{showedEntries}} of {{length}} entries</div>
+    <div *ngIf="length > 0">Showing {{pageInfo.offset + 1}} to {{showedEntries}} of {{length}} entries</div> -->
+
+    <div class="ac-container">
+
+        <button color="primary" class="ac n-ac" style="margin-right: 10px;" [disabled]="!prevIndex" [class.disable-btn]="pageInfo.pageIndex <= 0" (click)="onPrevious()">
+            <mat-icon style="font-size: 25px !important; ">chevron_left</mat-icon>
+        </button>
+
+        <span class="ac count" style=" padding: 9px 18px !important; ">{{pageInfo.pageIndex }}</span>
+
+        <button color="primary" class="ac n-ac" [disabled]="!nextIndex" (click)="onNext()">
+            <mat-icon style="font-size: 25px !important; ">chevron_right</mat-icon>
+        </button>
+    </div>
+</div>
