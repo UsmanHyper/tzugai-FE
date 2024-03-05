@@ -73,6 +73,12 @@
     justify-content: center;
   }
 
+  .custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .desc,
   .asc {
     position: absolute;
@@ -112,6 +118,7 @@
     transform: rotate(180deg);
     position: absolute;
     right: 5px;
+    color: red;
     // top: 0px;
   }
 
@@ -158,6 +165,7 @@
 .ri-delete-bin-2-line {
   color: red
 }
+
 .ri-pencil-line {
   color: forestgreen
 }

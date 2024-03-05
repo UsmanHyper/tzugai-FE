@@ -7,30 +7,30 @@
         <p class="title-discription"> Please enter you credentials to log in.</p>
         <form [formGroup]="loginForm">
             <label class="label-feild">Email</label>
-            <mat-form-field class="w-100-p" appearance="outline">
+            <mat-form-field class="w-100-p mb-16" appearance="outline">
                 <input matInput type="email" placeholder="Your email" maxlength="50" formControlName="email" required>
                 <mat-error>
                     <div *ngIf="loginForm.get('email')!.hasError('required');">
-                        Please enter email.
+                        <span class="text-danger"> Please enter email.</span>
                     </div>
                     <div *ngIf="loginForm.get('email')!.hasError('pattern');">
-                        Please enter a valid email.
+                        <span class="text-danger"> Please enter a valid email. </span>
                     </div>
                 </mat-error>
             </mat-form-field>
 
             <label class="label-feild">Password</label>
-            <mat-form-field class="w-100-p" appearance="outline">
+            <mat-form-field class="w-100-p mb-16" appearance="outline">
                 <input matInput [type]="hidePassword ? 'password' : 'text'" maxlength="25"
                     placeholder="Enter your password" formControlName="password" required>
                 <span mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
-                    style="color:rgba(0, 0, 0, 0.8);">
+                    style="color:rgba(231, 8, 8, 0.8);">
                     <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </span>
                 <mat-error *ngIf="loginForm.get('password')!.hasError('required')">
-                    Please enter your password
+                    <span class="text-danger">   Please enter your password </span>
                 </mat-error>
-               
+
             </mat-form-field>
 
             <div class="mt-10">

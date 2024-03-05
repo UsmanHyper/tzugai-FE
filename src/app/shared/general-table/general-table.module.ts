@@ -11,6 +11,7 @@ import { PaginatorModule } from "src/app/shared/pagination/module";
 import { GeneralTableComponent } from "./general-table.component";
 import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
+import { DirectivesModule } from "../directives/module";
 
 
 
@@ -24,7 +25,8 @@ import { MatIconModule } from "@angular/material/icon";
         ReactiveFormsModule,
         PaginatorModule,
         MatInputModule,
-        MatIconModule
+        MatIconModule,
+        DirectivesModule
     ],
     exports: [
         GeneralTableComponent

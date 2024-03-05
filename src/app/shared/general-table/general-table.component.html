@@ -64,6 +64,11 @@
                       <th *ngIf="!column.sortable" scope="col">
                         <span> {{ column.title | uppercase }}</span>
                       </th>
+                      <th *ngIf="column.sortable" scope="col" sortable="{{
+                        !!column.sortColumn ? column.sortColumn : column.name
+                      }}" (sort)="onSort($event, column)"  class="custom">
+                        {{ column.title | uppercase }}
+                      </th>
                     </ng-container>
                   </ng-container>
 

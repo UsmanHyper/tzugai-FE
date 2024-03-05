@@ -24,9 +24,9 @@ import { MatBadgeModule } from '@angular/material/badge';
     ],
     imports: [
         CommonModule,
+        LoginRoutingModule,
         FormsModule,
         ReactiveFormsModule,
-        LoginRoutingModule,
         MatButtonModule,
         MatInputModule,
         MatCheckboxModule,

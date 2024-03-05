@@ -34,7 +34,7 @@ export class PaginationComponent implements OnInit, OnChanges {
         this.pageNo = { nextPage: 0, prevPage: 0 };
         this.showedEntries = 0;
         this.totalPages = 0;
-        this.pageInfo = { pageIndex: 0, pageSize: 10, offset: 0 };
+        this.pageInfo = { pageIndex: 1, pageSize: 10, offset: 0 };
         this.pageChange = new EventEmitter();
 
     }

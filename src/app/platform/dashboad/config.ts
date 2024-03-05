@@ -29,7 +29,7 @@ export class SubTableConfig {
 
         columns: [
             { name: 'date', title: 'date', sortable: false, sortingOutside: false, format: 'date' },
-            { name: 'email', title: 'email', sortable: false, sortingOutside: false, }
+            { name: 'email', title: 'email', sortable: true, sortingOutside: true, }
         ]
     }
 }

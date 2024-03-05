@@ -22,7 +22,6 @@ import { SortEvent } from '../directives/models';
     styleUrls: ['./general-table.component.scss']
 })
 export class GeneralTableComponent implements OnInit, OnDestroy, OnChanges {
-
     @ViewChildren(SortableTableHeader) headers!: QueryList<SortableTableHeader>;
     // @ViewChildren(SearchComponent) searchControl!: QueryList<SearchComponent>;
 
@@ -82,8 +81,6 @@ export class GeneralTableComponent implements OnInit, OnDestroy, OnChanges {
 
         this.searchCon = new FormControl('');
 
-
-
         this.count = 0;
         this.currentPage = 1;
         this.nextPage = { nextPage: 0, prevPage: 0 };
@@ -120,7 +117,6 @@ export class GeneralTableComponent implements OnInit, OnDestroy, OnChanges {
         if (changes['nextPage']) {
             this.nextPage = changes['nextPage'].currentValue;
 
-            console.log("============", this.nextPage)
 
         }
 
@@ -132,9 +128,6 @@ export class GeneralTableComponent implements OnInit, OnDestroy, OnChanges {
 
     ngOnInit(): void {
 
-        console.log("============", this.dataSource)
-
-        console.log("===============", this.config)
         this.slug = `${this.config.slug}`;
         this.exportUrl = `${this.config.slug}`;
         let limit = localStorage.getItem('limit');
