@@ -11,10 +11,11 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://13.43.7.211:3000/api/',
-  baseUrlData: 'http://13.43.7.211:3000/api/'
+  baseUrl: 'https://backend.tzugai.com/api/',
+  baseUrlData: 'https://backend.tzugai.com/api/'
 
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

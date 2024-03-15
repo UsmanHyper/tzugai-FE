@@ -1,7 +1,8 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://13.43.7.211:3000/api/',
-  baseUrlData: 'http://13.43.7.211:3000/api/'
+
+  baseUrl: 'https://backend.tzugai.com/api/',
+  baseUrlData: 'https://backend.tzugai.com/api/'
 
 };
 // export const environment = {

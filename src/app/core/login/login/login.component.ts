@@ -71,6 +71,7 @@ export class LoginComponent implements OnInit {
       }
 
       let slug = new URL(`${environment.baseUrl}signin`)
+  
       this.apiService.post(slug.href, payload).subscribe(
         (response: any) => {
           console.log("response", response)
